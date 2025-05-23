@@ -33,7 +33,7 @@ public class FuncionarioComissionado extends Funcionario{
         this.valorComissionado = valorComissionado;
     }
 
-    private void calculaSalario() {
+    public void calculaSalario() {
         setSalario(valorComissionado * numVendas);
     }
 }

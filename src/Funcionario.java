@@ -1,4 +1,4 @@
-public abstract class Funcionario {
+public abstract class Funcionario implements Payable {
     protected String primeiroNome, ultimoNome, pis;
     protected Double salario;
 
@@ -45,5 +45,9 @@ public abstract class Funcionario {
 
     public void setUltimoNome(String ultimoNome) {
         this.ultimoNome = ultimoNome;
+    }
+
+    public void calculaSalario() {
+        this.getSalario();
     }
 }

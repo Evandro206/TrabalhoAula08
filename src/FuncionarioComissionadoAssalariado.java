@@ -14,7 +14,7 @@ public class FuncionarioComissionadoAssalariado extends FuncionarioComissionado 
                 "\nVendas: " + numVendas;
     }
 
-    private void calculaSalario() {
+    public void calculaSalario() {
         setSalario(salario += valorComissionado * numVendas);
     }
 }

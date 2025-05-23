@@ -4,7 +4,6 @@ public class FuncionarioHorista extends Funcionario {
         super(primeiroNome, ultimoNome, pis);
         this.horasTrabalhadas = horasTrabalhadas;
         this.valorHoras = valorHoras;
-        calculaSalario();
     }
 
     @Override
@@ -32,8 +31,8 @@ public class FuncionarioHorista extends Funcionario {
         this.valorHoras = valorHoras;
     }
 
-    private void calculaSalario() {
-        if (horasTrabalhadas < 40) {
+    public void calculaSalario() {
+        if (horasTrabalhadas <= 40) {
             setSalario(horasTrabalhadas * valorHoras);
         } else if (horasTrabalhadas > 40) {
             double horasExtras = (horasTrabalhadas - 40) * (valorHoras * 1.5);

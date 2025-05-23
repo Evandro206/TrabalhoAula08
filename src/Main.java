@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     static ArrayList<Funcionario> funcionarios = new ArrayList<>();
+    static ArrayList<Invoice> pagamentos = new ArrayList<>();
 
     public static void main(String[] args) {
         boolean continuar = true;
@@ -22,7 +23,9 @@ public class Main {
                     case 2:
                         for (Funcionario funcionario : funcionarios) {
                             if (funcionario instanceof FuncionarioComissionadoAssalariado) {funcionario.setSalario(funcionario.getSalario() * 1.1);}
-                            System.out.println(funcionario.toString() + "\n");
+                            pagamentos.add(new Invoice(funcionario));
+                            pagamentos.getLast().calculaSalario();
+                            System.out.println(pagamentos.getLast().toString() + "\n");
                         }
                         continuar = false;
                         break;
@@ -92,8 +95,6 @@ public class Main {
         funcionarioInfo[2] = sc.nextLine();
         return funcionarioInfo;
     }
-
-    private static Funcionario editarFuncionario(Funcionario funcionario){return null;}
 
     private static void verificaPIS(String pis){
         for(Funcionario funcionario : funcionarios){
