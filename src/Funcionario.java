@@ -47,7 +47,5 @@ public abstract class Funcionario implements Payable {
         this.ultimoNome = ultimoNome;
     }
 
-    public void calculaSalario() {
-        this.getSalario();
-    }
+    public void calculaSalario() {}
 }
